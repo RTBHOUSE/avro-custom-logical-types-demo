@@ -1,0 +1,69 @@
+{
+  "type": "record",
+  "name": "StandardRecord",
+  "aliases": [
+    "RecordWithLogicalTypes"
+  ],
+  "namespace": "com.rtbhouse.generated.avro",
+  "doc": "Just an example record without logical types. Alias added for compatibility purposes.",
+  "fields": [
+    {
+      "name": "uuid",
+      "type": [
+        "null",
+        {
+          "type": "string"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "customDuration",
+      "type": [
+        "null",
+        {
+          "name": "TwelveBytes",
+          "type": "fixed",
+          "size": 12
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "int2longMultimap",
+      "type": [
+        "null",
+        {
+          "type": "map",
+          "values": {
+            "type": "array",
+            "items": "long"
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "arrayOfUnionOfCustomTypes",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "string"
+          },
+          {
+            "type": "TwelveBytes"
+          },
+          {
+            "type": "map",
+            "values": {
+              "type": "array",
+              "items": "long"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

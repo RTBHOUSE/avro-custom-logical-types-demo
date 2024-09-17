@@ -1,0 +1,75 @@
+{
+  "type": "record",
+  "name": "RecordWithLogicalTypes",
+  "aliases": [
+    "StandardRecord"
+  ],
+  "namespace": "com.rtbhouse.generated.avro",
+  "doc": "Same as StandardRecord but uses logical types. Alias added for compatibility purposes.",
+  "fields": [
+    {
+      "name": "uuid",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "logicalType": "uuid"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "customDuration",
+      "type": [
+        "null",
+        {
+          "name": "TwelveBytes",
+          "type": "fixed",
+          "size": 12,
+          "logicalType": "custom-duration"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "int2longMultimap",
+      "type": [
+        "null",
+        {
+          "type": "map",
+          "values": {
+            "type": "array",
+            "items": "long"
+          },
+          "logicalType": "int-2-long-multimap"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "arrayOfUnionOfCustomTypes",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "string",
+            "logicalType": "uuid"
+          },
+          {
+            "type": "TwelveBytes",
+            "logicalType": "custom-duration"
+          },
+          {
+            "type": "map",
+            "values": {
+              "type": "array",
+              "items": "long"
+            },
+            "logicalType": "int-2-long-multimap"
+          }
+        ]
+      }
+    }
+  ]
+}
