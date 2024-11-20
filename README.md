@@ -1,6 +1,9 @@
 # Custom logical types in Avro
 
-Repository demonstrates how to define and use standard and custom Avro logical types.
+The Repository demonstrates how to define and use standard and custom Avro logical types.
+
+It provides full source code for examples 
+mentioned in the [Article](https://techblog.rtbhouse.com/avro-custom-logical-types/).
 
 Links:
 
